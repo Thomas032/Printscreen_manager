@@ -1,6 +1,6 @@
+#COPIRIGHT THOMAS032 -- 2021
 from tkinter import *
 import keyboard
-
 import pyautogui
 import os
 import datetime 
@@ -65,17 +65,17 @@ def exists(file_name, image):
     lab = Label(r, text=f"File '{file_name}' already exists do yu want to overwrite it?")
     lab.config(font=("Helvetica", 15))
     def callback(event):
-        image.save(r"C:\Users\Tomáš\Pictures\Pyscreens\%s.png" %file_name)
+        image.save(r"C:\Users\YOUR_PATH\Pyscreens\%s.png" %file_name)
         r.destroy()
     def overw():
-        image.save(r"C:\Users\Tomáš\Pictures\Pyscreens\%s.png" %file_name)
+        image.save(r"C:\Users\YOUR_PATH\Pyscreens\%s.png" %file_name)
         r.destroy()
         
         
     def notverw():
         today = datetime.datetime.today()
         ran = str(file_name)+ str("-"+today.strftime("%d.%m.%Y"))
-        image.save(r"C:\Users\Tomáš\Pictures\Pyscreens\%s.png" %ran)
+        image.save(r"C:\Users\YOUR_PATH\Pyscreens\%s.png" %ran)
         r.destroy()
         
     but = Button(r, text="NO", command=notverw)
@@ -97,12 +97,12 @@ def main():
             im1 = pyautogui.screenshot()
             name = gui()
             file = name
-            if not os.path.exists(r"C:\Users\Tomáš\Pictures\Pyscreens\%s.png" %file):
-                im1.save(r"C:\Users\Tomáš\Pictures\Pyscreens\%s.png" %file) 
+            if not os.path.exists(r"C:\Users\YOUR_PATH\%s.png" %file):
+                im1.save(r"C:\Users\YOUR_PATH\%s.png" %file) 
             else:
                 write = exists(file, im1)
                 if write==True:
-                    im1.save(r"C:\Users\Tomáš\Pictures\Pyscreens\%s.png" %file)
+                    im1.save(r"C:\Users\YOUR_PATH\%s.png" %file)
                 if write ==False:
                     print("do not overwrite")
                     
